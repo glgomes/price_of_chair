@@ -1,8 +1,10 @@
+import os
+
 __author__ = 'glgs'
 
 COLLECTION = "alerts"
 
-URL = "https://api.mailgun.net/v3/sandbox<>.mailgun.org/messages"
-API_KEY = "key-<>"
-FROM = "Mailgun Sandbox <postmaster@sandbox<>.mailgun.org>"
-ALERT_TIMEOUT = 1
+URL = os.environ.get('MAILGUN_URL')
+API_KEY = os.environ.get('MAILGUN_API_KEY')
+FROM = os.environ.get('MAILGUN_FROM')
+ALERT_TIMEOUT = int(os.environ.get('ALERT_TIMEOUT'))

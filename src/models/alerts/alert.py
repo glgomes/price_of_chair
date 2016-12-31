@@ -2,7 +2,7 @@ import uuid
 
 import datetime
 import requests
-import src.app
+import src.config as config
 
 import src.models.alerts.constants as alert_constants
 from src.common.database import Database
@@ -36,7 +36,7 @@ class Alert(object):
                         "Alert page:\n\n{}".format(self.item.name,
                                                    self.price_limit,
                                                    self.item.url,
-                                                   "http://{}/alerts/{}".format(src.app.app.config['DOMAIN'], self._id))
+                                                   "http://{}/alerts/{}".format(config.DOMAIN, self._id))
             }
         )
 

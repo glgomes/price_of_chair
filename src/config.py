@@ -1,9 +1,8 @@
+import os
+
 __author__ = 'glgs'
 
-DEBUG = True
-ADMINS = frozenset([
-    "your@email.com"
-])
+DEBUG = False
+ADMINS = frozenset([os.environ.get('ADMIN_EMAIL')])
 
-DOMAIN = "your.domain.com"
-
+DOMAIN = os.environ.get('DOMAIN_NAME')
