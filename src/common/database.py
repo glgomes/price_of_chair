@@ -1,16 +1,18 @@
+import os
+
 import pymongo
 
 __author__ = 'glgs'
 
 
 class Database(object):
-    URI = "mongodb://127.0.0.1:27017"
+    URI = os.environ.get("MONGOLAB_URI")
     DATABASE = None
 
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client["price"]
+        Database.DATABASE = client[os.environ.get("DATABASE_NAME")]
 
     @staticmethod
     def insert(collection, data):
