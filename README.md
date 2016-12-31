@@ -1,4 +1,4 @@
-# price_of_chair
+# Price of Items
 Find best price for items
 
 Git upload exercise
